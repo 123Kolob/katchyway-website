@@ -5,7 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Katchyway Leatherworks - High-quality leather goods including bags, wallets, belts, and accessories.">
     <title>Katchyway Leatherworks</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Header styles */
+        header {
+            background: #15317E;
+            color: #728FCE;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-right: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            color: #728FCE;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        /* Products section styles */
+        .products {
+            background: #f9f9f9;
+            padding: 2rem 0;
+        }
+
+        .products h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .product-item {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: #4B5320	;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* About and Contact section styles */
+        .about {
+            background: #e3f2fd;
+            padding: 2rem 0;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .about p {
+            text-align: center;
+        }
+
+        .contact {
+            background: #ffecb3;
+            padding: 2rem 0;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact form label {
+            margin-top: 1rem;
+        }
+
+        .contact form input, .contact form textarea {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact form button {
+            background: #333;
+            color: ##728FCE;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #333;
+            color: ##728FCE;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product-item {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product-item {
+                flex: 1 1 100%;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,6 +220,7 @@
                     <p>High-quality leather bag with a stylish design.</p>
                     <button>Add to Cart</button>
                 </div>
+                <!-- More product items here -->
             </div>
         </div>
     </section>
@@ -79,6 +261,15 @@
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message!');
+                form.reset();
+            });
+        });
+    </script>
 </body>
 </html>
